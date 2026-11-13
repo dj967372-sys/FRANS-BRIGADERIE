@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fran's Brigaderie</title>
+
+    <meta name="description" content="Brigadeiros artesanais feitos com amor para adoçar seu dia!">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <div class="logo">
+            <span>🧁</span>
+            <h2>
+             Fran's
+                <br>
+                Brigaderie
+            </h2>
+        </div>
+
+        
+        <nav class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#cardapio">Cardápio</a>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#avaliacoes">Avaliações</a>
+            <a href="#sabores">Sabores</a>
+        </nav>
+
+        <button class="cart-button" onclick="abrirCarrinho()">
+            🛒 Carrinho
+            <span id="contador-carrinho">0</span>
+        </button>
+
+        <button class="menu-mobile" onclick="abrirMenu()">
+            ☰
+        </button>
+    </header>
+
+
+    <!-- PÁGINA INICIAL -->
+    <section class="inicio" id="inicio">
+        <div class="inicio-conteudo">
+            <span class="subtitulo">
+                FEITO À MÃO COM CARINHO
+            </span>
+
+            <h1>
+                Doce é vida...
+                <br>
+                e aqui tem
+                <em>muito mais sabor!</em>
+            </h1>
+
+            <p>
+                Brigadeiros artesanais feitos com amor
+                para adoçar seu dia!
+            </p>
+
+            <a href="#cardapio" class="botao-principal">
+                🛒 Ver Cardápio →
+            </a>
+        </div>
+
+        <div class="inicio-imagem" style="text-align: center;">
+            <img src="img/fran.jpeg" alt="Brigadeiros artesanais" style="max-width: 420px; width: 100%; border-radius: 20px;">
+        </div>
+    </section>
+
+
+    <!-- BENEFÍCIOS -->
+    <section class="beneficios">
+        <div>
+            <span>💎</span>
+            <p>
+                <strong>Qualidade</strong>
+                <br>
+                em cada detalhe
+            </p>
+        </div>
+
+        <div>
+            <span>💗</span>
+            <p>
+                <strong>Feitos com</strong>
+                <br>
+                muito amor
+            </p>
+        </div>
+
+      
+    </section>
+
+
+    <!-- CARDÁPIO -->
+    <section class="cardapio" id="cardapio">
+        <div class="titulo-secao">
+            <span>NOSSAS DELÍCIAS</span>
+            <h2>
+                Nosso Cardápio
+                <em>♡</em>
+            </h2>
+            <p>
+                Escolha seus doces favoritos!
+            </p>
+        </div>
+
+        <div class="cardapio-container">
+
+            <aside class="categorias">
+                <button class="categoria ativa" onclick="filtrarProdutos('Todos', this)">Todos</button>
+                <button class="categoria" onclick="filtrarProdutos('Brigadeiros', this)">Brigadeiros</button>
+                <button class="categoria" onclick="filtrarProdutos('Caixas e Kits', this)">Caixas e Kits</button>
+                <button class="categoria" onclick="filtrarProdutos('Sobremesas', this)">Sobremesas</button>
+                <button class="categoria" onclick="filtrarProdutos('Geladinhos', this)">Geladinhos</button>
+            </aside>
+
+            <div class="produtos">
+                <!-- BRIGADEIRO UNIDADE -->
+                <div class="produto" data-categoria="Brigadeiros">
+                    <img src="img/docinho.jpeg" alt="Docinho Gourmet">
+                    <h3>Docinho Gourmet (Unidade)</h3>
+                    <p>R$ 2,50</p>
+                    <button onclick="adicionarCarrinho(1, 'Docinho Gourmet (Unidade)', 2.50)">
+                        Adicionar +
+                    </button>
+                </div>
+
+                <!-- CAIXAS E KITS -->
+                <div class="produto" data-categoria="Caixas e Kits">
+                    <img src="img/kit 4.jpeg" alt="Caixa com 4 Brigadeiros">
+                    <h3>Caixa com 4 Brigadeiros</h3>
+                    <p>R$ 15,00</p>
+                    <button onclick="adicionarCarrinho(2, 'Caixa com 4 Brigadeiros', 10.00)">
+                        Adicionar +
+                    </button>
+                </div>
+
+                <div class="produto" data-categoria="Caixas e Kits">
+                    <img src="img/kit 6.jpeg" alt="Caixa com 6 Brigadeiros">
+                    <h3>Caixa com 6 Brigadeiros</h3>
+                    <p>R$ 20,00</p>
+                    <button onclick="adicionarCarrinho(3, 'Caixa com 6 Brigadeiros', 15.00)">
+                        Adicionar +
+                    </button>
+                </div>
+                 <div class="produto" data-categoria="Caixas e Kits">
+                    <img src="img/kit 12.jpeg" alt="Caixa com 12 Brigadeiros">
+                    <h3>Caixa com 12 Brigadeiros</h3>
+                    <p>R$ 25,00</p>
+                    <button onclick="adicionarCarrinho(4, 'Caixa com 12 Brigadeiros', 25.00)">
+                        Adicionar +
+                    </button>
+                </div>
+
+                <!-- SOBREMESAS -->
+                <div class="produto" data-categoria="Sobremesas">
+                    <img src="img/pave.jpeg" alt="Pavê 200ml">
+                    <h3>Pavê (200ml)</h3>
+                    <p>R$ 8,00</p>
+                    <button onclick="adicionarCarrinho(5, 'Pavê (200ml)', 8.00)">
+                        Adicionar +
+                    </button>
+                </div>
+
+                <div class="produto" data-categoria="Sobremesas">
+                    <img src="img/maracuja.jpeg" alt="Mousse de Maracujá 200ml">
+                    <h3>Mousse de Maracujá (200ml)</h3>
+                    <p>R$ 8,00</p>
+                    <button onclick="adicionarCarrinho(6, 'Mousse de Maracujá (200ml)', 8.00)">
+                        Adicionar +
+                    </button>
+                </div>
+
+                <div class="produto" data-categoria="Sobremesas">
+                    <img src="img/mini pudim.jpeg" alt="Mini Pudim 120ml">
+                    <h3>Mini Pudim (120ml)</h3>
+                    <p>R$ 9,00</p>
+                    <button onclick="adicionarCarrinho(7, 'Mini Pudim (120ml)', 9.00)">
+                        Adicionar +
+                    </button>
+                </div>
+                <div class="produto" data-categoria="Sobremesas">
+                    <img src="img/pudim G.jpeg" alt="Pudim G">
+                    <h3>Pudim (G)</h3>
+                    <p>R$ 60,00</p>
+                    <button onclick="adicionarCarrinho(8, 'Pudim (G)', 60.00)">
+                        Adicionar +
+                    </button>
+                </div>
+                <div class="produto" data-categoria="Sobremesas">
+                    <img src="img/bolo de pote.jpeg" alt="Bolo de pote">
+                    <h3>Bolo de pote</h3>
+                    <p>R$ 8,00</p>
+                    <button onclick="adicionarCarrinho(9, 'Bolo de pote', 8.00)">
+                        Adicionar +
+                    </button>
+                </div>
+
+                <!-- GELADINHOS -->
+                <div class="produto" data-categoria="Geladinhos">
+                    <img src="img/geladinho.jpeg" alt="Geladinho Gourmet">
+                    <h3>Geladinho Gourmet (130g)</h3>
+                    <p>R$ 7,00</p>
+                    <button onclick="adicionarCarrinho(10, 'Geladinho Gourmet (130g)', 7.00)">
+                        Adicionar +
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SOBRE NÓS -->
+     <section class="sobre" id="sobre">
+    <div class="sobre-logo">
+            <img src="img/fran.jpeg" alt="Fran's Brigaderie" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+
+        </div>
+
+        <div class="sobre-conteudo">
+            <h2>
+                Nossa História
+                <em>♡</em>
+            </h2>
+
+            <p>
+               A Fran's Brigaderie é uma confeitaria artesanal, criada em 2016, pelas mãos de Priscilla Inacio e Francis Brito. Nossa missão é entregar uma doce experiência para nossos clientes, pois acreditamos que, uma boa sobremesa conquista corações e pode tornar o dia de alguém, muito mais especial. Que tal provar as nossas delícias? 😍
+            </p>
+
+            <h3>
+                Obrigada por fazer parte da nossa história! ❤️
+            </h3>
+        </div>
+    </section>
+
+
+    <!-- AVALIAÇÕES -->
+    <section class="avaliacoes" id="avaliacoes">
+        <div class="titulo-secao">
+            <h2>
+                O que nossos clientes dizem ❤️
+            </h2>
+        </div>
+
+        <div class="form-avaliacao" style="max-width: 500px; margin: 0 auto 40px; background: white; padding: 25px; border-radius: 20px; border: 1px solid #f1dce6; text-align: center;">
+            <h3>Deixa a tua avaliação ❤️</h3>
+            <input type="text" id="nome-avaliador" placeholder="O teu nome" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 10px; border: 1px solid #ddd;">
+            <select id="nota-avaliador" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 10px; border: 1px solid #ddd;">
+                <option value="5">★★★★★ (5 - Perfeito!)</option>
+                <option value="4">★★★★☆ (4 - Muito bom)</option>
+                <option value="3">★★★☆☆ (3 - Bom)</option>
+                <option value="2">★★☆☆☆ (2 - Regular)</option>
+                <option value="1">★☆☆☆☆ (1 - Ruim)</option>
+            </select>
+            <textarea id="comentario-avaliador" placeholder="Escreve o teu comentário..." style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 10px; border: 1px solid #ddd; height: 80px;"></textarea>
+            <button onclick="enviarNovaAvaliacao()" class="botao-principal" style="width: 100%;">Enviar Avaliação</button>
+        </div>
+
+        <div class="avaliacoes-container">
+        </div>
+    </section>
+
+
+    <!-- SABORES DISPONÍVEIS E DESTAQUES -->
+    <section class="sabores" id="sabores" style="padding: 60px 20px; background: #fff8fb;">
+        <div class="titulo-secao" style="text-align: center; margin-bottom: 30px;">
+            <span>MENU DO DIA</span>
+            <h2 style="color: #d63384; font-size: 2rem;">
+                Sabores Disponíveis 🍬
+            </h2>
+            <p style="color: #666;">Confira os sabores que preparamos para você hoje!</p>
+        </div>
+
+        <div id="container-sabores" style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <!-- Os sabores e preços serão injetados dinamicamente pelo JavaScript -->
+        </div>
+    </section>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <h2>Fran's Brigaderie 🧁</h2>
+        <p>Mais que doces, momentos felizes! ❤️</p>
+        <p>© 2026 Fran's Brigaderie</p>
+    </footer>
+
+
+    <!-- MODAL DO CARRINHO -->
+    <div class="modal" id="modal-carrinho">
+        <div class="modal-conteudo">
+            <button class="fechar" onclick="fecharCarrinho()">×</button>
+
+            <h2>🛒 Seu Carrinho ♡</h2>
+
+            <div id="itens-carrinho">
+                <p>Seu carrinho está vazio.</p>
+            </div>
+
+            <div class="total">
+                Total:
+                <strong id="valor-total">R$ 0,00</strong>
+            </div>
+
+            <label for="nome-cliente" style="display:block; margin-top:15px; font-weight:bold; font-size:14px; text-align:left;">
+                Seu nome:
+            </label>
+            <input type="text" id="nome-cliente" placeholder="Digite seu nome" style="width:100%; padding:10px; margin:5px 0 10px; border-radius:10px; border:1px solid #ddd;">
+
+            <label for="observacoes-pedido" style="display:block; margin-top:10px; font-weight:bold; font-size:14px; text-align:left;">
+                Sabores / Observações do pedido:
+            </label>
+            <textarea id="observacoes-pedido" placeholder="Ex: 2 de Ninho, 2 Tradicionais..." style="width:100%; padding:10px; margin:5px 0 15px; border-radius:10px; border:1px solid #ddd; height:70px; resize:none;"></textarea>
+
+            <!-- Opções de Finalização no Carrinho -->
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+    
+    <!-- Opção 1: Pagar Online via Pix -->
+    <button type="button" onclick="mostrarAreaPix()" style="background: #28a745; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1rem;">
+        💠 Pagar Online (Pix) e Enviar Pedido
+    </button>
+
+    <!-- Caixa do Pix (Fica oculta até o cliente clicar no botão acima) -->
+    <div id="area-pix" style="display: none; background: #f8f9fa; border: 1px dashed #28a745; padding: 15px; border-radius: 10px; text-align: center;">
+        <p style="font-size: 13px; color: #333; margin-bottom: 8px;">
+            1. Copie o código Pix abaixo e pague o valor total (<strong id="valor-pix-total">R$ 0,00</strong>) no seu banco:
+        </p>
+        
+        <input type="text" id="codigo-pix-input" value="00020101021126580014BR.GOV.BCB.PIX0136defd83e7-2551-4608-ba4b-5e9c0f414b4f5204000053039865802BR5925PRISCILLA EMANUELE INACIO6009SAO PAULO62080504daqr63043966" readonly style="width: 100%; padding: 8px; font-size: 11px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 8px; background: #fff; color: #555;">
+        
+        <button type="button" onclick="copiarCodigoPix()" id="btn-copiar-pix" style="background: #17a2b8; color: white; border: none; padding: 8px 15px; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; width: 100%; margin-bottom: 12px;">
+            📋 Copiar Código Pix
+        </button>
+
+        <p style="font-size: 13px; color: #333; margin-bottom: 8px;">
+            2. Após pagar, clique abaixo para enviar o pedido e anexe o comprovante no WhatsApp:
+        </p>
+
+        <button type="button" onclick="finalizarNoWhatsApp('pix')" style="background: #25d366; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%;">
+            ✅ Já paguei! Enviar no WhatsApp
+        </button>
+    </div>
+
+    <!-- Opção 2: Combinar direto com a vendedora -->
+    <button type="button" onclick="finalizarNoWhatsApp('vendedora')" style="background: #d63384; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1rem;">
+        💬 Finalizar com a Vendedora (WhatsApp)
+    </button>
+
+</div>
+        </div>
+    </div>
+
+
+    <!-- SDK do Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Seu JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
