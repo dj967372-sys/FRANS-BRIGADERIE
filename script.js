@@ -509,7 +509,7 @@ function copiarCodigoPix() {
 
 function finalizarNoWhatsApp(tipoPagamento) {
     // COLOQUE AQUI O NÚMERO DE WHATSAPP DA LOJA (com 55 + DDD + Número)
-    const numeroWhatsApp = "5579999999999"; 
+    const numeroWhatsApp = "557991922183"; 
 
     // Pega os itens do carrinho (ajuste conforme a estrutura do seu carrinho atual)
     if (typeof carrinho !== 'undefined' && carrinho.length === 0) {
